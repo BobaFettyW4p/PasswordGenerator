@@ -27,10 +27,13 @@ def generate_password(book,passwordLength):
     return finalPassword
 
 if __name__ == '__main__':
+    usablePassword = []
     passwordLength = input('How many characters long does your password need to be?')
     passwordLength = int(passwordLength)
     bookLocation = input('What file are we pulling the password from?')
     bookText = import_book(bookLocation)
-    usablePassword = generate_password(bookText,passwordLength)
+    while len(usablePassword) < 3:
+        generatedPassword = generate_password(bookText,passwordLength)
+        usablePassword.append(generatedPassword)
     print(usablePassword)
 
