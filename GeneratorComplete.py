@@ -1,8 +1,8 @@
 import random, string
 
 def import_book(fileName):
-    f = open(fileName, 'r')
-    file = f.read()
+    with open(fileName, 'r') as f
+        file = f.read()
     return file
 
 def generate_password(book,passwordLength):
@@ -32,6 +32,7 @@ if __name__ == '__main__':
     passwordLength = int(passwordLength)
     bookLocation = input('What file are we pulling the password from?')
     bookText = import_book(bookLocation)
+    #generates a total of 3 passwords to return
     while len(usablePassword) < 3:
         generatedPassword = generate_password(bookText,passwordLength)
         usablePassword.append(generatedPassword)
