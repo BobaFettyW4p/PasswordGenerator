@@ -50,10 +50,6 @@ def generate_password(final_book):
         password_candidates.append(password)
     return password_candidates
         
-        
-                    
-
-
 def main(BOOK_ID):
     book = get_book(BOOK_ID)
     final_book = clean_book(book)
